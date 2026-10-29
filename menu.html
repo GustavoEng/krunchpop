@@ -1,0 +1,208 @@
+<?php
+$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+$host = $_SERVER['HTTP_HOST'];
+// Ajusta '/tu_proyecto/' según la carpeta raíz de tu proyecto dentro de htdocs o www
+$base_url = "$protocol://$host/krunchpop/";
+?>
+<div class="sidebar" data-background-color="dark">
+  <div class="sidebar-logo">
+    <!-- Logo Header -->
+    <div class="logo-header" data-background-color="dark">
+      <a href="<?php echo $base_url; ?>index.php" class="logo">
+        <img
+          src="<?php echo $base_url; ?>assets/img/kaiadmin/logo_light.svg"
+          alt="navbar brand"
+          class="navbar-brand"
+          height="20"
+        />
+      </a>
+      <div class="nav-toggle">
+        <button class="btn btn-toggle toggle-sidebar">
+          <i class="gg-menu-right"></i>
+        </button>
+        <button class="btn btn-toggle sidenav-toggler">
+          <i class="gg-menu-left"></i>
+        </button>
+      </div>
+      <button class="topbar-toggler more">
+        <i class="gg-more-vertical-alt"></i>
+      </button>
+    </div>
+    <!-- End Logo Header -->
+  </div>
+  
+  <div class="sidebar-wrapper scrollbar scrollbar-inner">
+    <div class="sidebar-content">
+      <ul class="nav nav-secondary">
+        
+        <!-- Inicio -->
+        <li class="nav-item active">
+          <a href="<?php echo $base_url; ?>index.php">
+            <i class="fas fa-home"></i>
+            <p>Inicio</p>
+          </a>
+        </li>
+
+        <li class="nav-section">
+          <span class="sidebar-mini-icon">
+            <i class="fa fa-ellipsis-h"></i>
+          </span>
+          <h4 class="text-section">Administración</h4>
+        </li>
+
+        <!-- Módulo: Ventas / Solicitudes -->
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#solicitud">
+            <i class="fas fa-tasks"></i>
+            <p>Ventas</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="solicitud">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="<?php echo $base_url; ?>forms/form_alta_solicitud.php">
+                  <span class="sub-item">Nueva solicitud</span>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $base_url; ?>forms/tablero_solicitudes.php">
+                  <span class="sub-item">Tablero de solicitudes</span>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $base_url; ?>forms/form_historial_ventas.php">
+                  <span class="sub-item">Historial</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Módulo: Fabricación -->
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#fabrica">
+            <i class="fas fa-pallet"></i>
+            <p>Fabricación</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="fabrica">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="<?php echo $base_url; ?>forms/form_admin_solicitudes.php">
+                  <span class="sub-item">Administración de solicitudes</span>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $base_url; ?>forms/form_incidencias.php">
+                  <span class="sub-item">Incidencias</span>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $base_url; ?>forms/form_solicitudes_fin.php">
+                  <span class="sub-item">Solicitudes finalizadas</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Módulo: Productos -->
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#servicios">
+            <i class="fas fa-dolly"></i>
+            <p>Productos</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="servicios">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="<?php echo $base_url; ?>forms/form_alta_prod.php">
+                  <span class="sub-item">Ingreso de productos</span>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $base_url; ?>forms/form_distribucion.php">
+                  <span class="sub-item">Distribución de productos</span>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $base_url; ?>forms/form_inventarios.php">
+                  <span class="sub-item">Inventarios</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Módulo: Ventas (Gestión) -->
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#menu-ventas">
+            <i class="fas fa-shopping-bag"></i>
+            <p>Estadisticas</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="menu-ventas">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="<?php echo $base_url; ?>forms/form_venta_sabor.php">
+                  <span class="sub-item">Venta por sabor</span>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $base_url; ?>forms/form_estadisticas.php">
+                  <span class="sub-item">Estadísticas</span>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $base_url; ?>forms/form_historico_ventas.php">
+                  <span class="sub-item">Histórico</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-section">
+          <span class="sidebar-mini-icon">
+            <i class="fa fa-ellipsis-h"></i>
+          </span>
+          <h4 class="text-section">Configuración</h4>
+        </li>
+
+        <!-- Módulo: Catálogos -->
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#cargas">
+            <i class="fas fa-layer-group"></i>
+            <p>Catálogos</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="cargas">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="<?php echo $base_url; ?>forms/form_alta_prod.php">
+                  <span class="sub-item">Sabores</span>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $base_url; ?>forms/form_alta_tienda.php">
+                  <span class="sub-item">Tiendas</span>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $base_url; ?>forms/form_vendedores.php">
+                  <span class="sub-item">Vendedores</span>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $base_url; ?>forms/form_clientes.php">
+                  <span class="sub-item">Clientes</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>
