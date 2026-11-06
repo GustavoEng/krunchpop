@@ -114,7 +114,7 @@
                        <?php 
                           $query= "SELECT * FROM t_pedido_temporal
                           INNER JOIN c_sabores ON t_pedido_temporal.id_producto = c_sabores.id_sabores
-                          ORDER BY fecha_alta_temp DESC";
+                          ORDER BY fecha_alta_temp ASC";
                         
                           $resultado = $conexion->query($query);
                           
